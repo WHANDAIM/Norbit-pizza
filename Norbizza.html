@@ -54,7 +54,7 @@
             display: flex;
             flex-direction: column;
             color: #0C0675;
-            background-color: #CE87C9;
+            background-color: #EF9DE9;
             padding: 20px 15px;
         }
         
@@ -64,14 +64,14 @@
             align-items: center;
             font-size: 16px;
             color: #0C0675;
-            background-color: #CE87C9;
+            background-color: #EF9DE9;
             padding: 15px;
             text-align: center;
         }
         
         
         header {
-            background: linear-gradient(135deg, #0C0675);
+            background: linear-gradient(135deg, #0E0788);
             color: white;
             padding: 15px 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -125,7 +125,7 @@
         }
         
         .hero {
-            background-image: url('https://i.postimg.cc/kMSmb8D2/background1Main.png'); 
+            background-image: url('https://i.postimg.cc/k4YfVrcF/a74b60f2-0038-480b-b626-eb5cc1ed3b0f.jpg'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -134,7 +134,7 @@
         
         .task-image {
             width: 100%;
-            max-width: 700px;
+            max-width: 800px;
             display: block;
             margin: 0 auto 30px;
         }
@@ -156,7 +156,7 @@
             text-align: center;
             font-size: 28px;
             margin-bottom: 20px;
-            color: #0C0675;
+            color: #ffffff;
         }
         
         .section-title-mini {
@@ -164,7 +164,7 @@
             font-size: 22px;
             margin-bottom: 25px;
             margin-top: 20px;
-            color: #0C0675;
+            color: #ffffff;
         }
         
         .pizza-grid {
@@ -174,6 +174,14 @@
             margin: 0 10px;
         }
         
+        .button-backpack{
+            background-size: 100%;
+            background-image: url('https://i.postimg.cc/Yq5DfHwG/b0f2d6cc-48e1-4e5c-a26a-dd885ee9aa8b.png');
+            padding: 24px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
         .pizza-card {
             background: rgba(10, 6, 85, 0.267);
             backdrop-filter: blur(40px);
@@ -262,6 +270,282 @@
             margin: 0 10px;
         }
         
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .cart-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100%;
+            background: white;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+            z-index: 1001;
+            transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .cart-sidebar.active {
+            right: 0;
+        }
+        
+        .cart-header {
+            background: linear-gradient(135deg, #0C0675, #790686);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cart-title {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        
+        .close-cart:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .cart-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .cart-section {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section-title-cart {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #0C0675;
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .item-info {
+            flex: 1;
+        }
+        
+        .item-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .item-details {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .item-price {
+            text-align: right;
+        }
+        
+        .current-price {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 16px;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .option-group {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .option-item {
+            flex: 1;
+        }
+        
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .option-label:hover {
+            border-color: #CE87C9;
+        }
+        
+        .option-input {
+            display: none;
+        }
+        
+        .option-input:checked + .option-label {
+            border-color: #CE87C9;
+            background-color: #f9f0fa;
+        }
+        
+        .custom-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .option-input:checked + .option-label .custom-checkbox {
+            background-color: #CE87C9;
+            border-color: #CE87C9;
+        }
+        
+        .option-input:checked + .option-label .custom-checkbox:after {
+            content: "✓";
+            color: white;
+            font-size: 14px;
+        }
+        
+        .text-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .text-input:focus {
+            outline: none;
+            border-color: #CE87C9;
+        }
+        
+        .order-summary {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .summary-total {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .artifact-section {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+        
+        .artifact-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .checkbox-label input {
+            margin-right: 8px;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 15px;
+            background: #0C0675;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .checkout-btn:hover {
+            background: #790686;
+        }
+        
+        .checkout-btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 40px 20px;
+            color: #7f8c8d;
+        }
+        
         @media (min-width: 768px) {
             .header-content {
                 flex-direction: row;
@@ -318,6 +602,13 @@
                 margin-left: 20px;
             }
         }
+        
+        @media (max-width: 480px) {
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -325,7 +616,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo-container">
-                    <img src="https://i.postimg.cc/sxzsXDYS/Icom-Main.png" alt="Norbizza Logo" style="height: 40px; width: 40px;">
+                    <img src="https://i.postimg.cc/Z5PH8vcg/9e27cc54-6257-4c35-aa31-2735d5e6c849.png" alt="Norbizza Logo" style="height: 40px; width: 40px;">
                     <span class="logo">Norbizza</span>
                 </div>
                 <nav>
@@ -335,7 +626,7 @@
                         <li><a href="">Фракции</a></li>
                         <li><a href="">Клан</a></li>
                         <li><a href="">Вступить в клан</a></li>
-                        <li><a href=""><img src="https://i.postimg.cc/BnnZH6dx/backpack-Main.png" alt="Backpack" style="width: 40px; height: 35px;"></a></li>
+                        <li><button class="button-backpack" id="openCart"></button></li>
                     </ul>
                 </nav>
             </div>
@@ -353,40 +644,39 @@
                     <div class="pizza-name">Клинок Пепперо</div>
                     <div class="pizza-ingredients">Пепперони, моцарелла, фирменный томатный соус</div>
                     <div class="pizza-price">
-                        <span>35 <img src="https://i.postimg.cc/7hShsW9v/Stop.png" alt="stop" class="icon-cyrcle"></span>
-                        <span>850 ₽</span>
+                        <span>35 <img src="https://i.postimg.cc/7hShsW9v/Stop.png" alt="stop" class="icon-cyrcle"></span>850 ₽
                     </div>
-                    <button class="add-to-cart" onclick="addToCart('Клинок Пепперо', 850)">В инвентарь</button>
+                    <button class="add-to-cart" onclick="addToCart('Клинок Пепперо', 850, '35 см')">В инвентарь</button>
                 </div>
                 <div class="pizza-card">
                     <img src="https://media.dodostatic.net/image/r:292x292/019a897c5ea574b889475bd98412de7b.avif" alt="Добыча Охотника" class="pizza-image">
                     <div class="pizza-name">Добыча Охотника</div>
                     <div class="pizza-ingredients">Цыпленок, говядина, пепперони, бекон, колбасаки, моцарелла, соус</div>
                     <div class="pizza-price">
-                        <span>35 <img src="https://i.postimg.cc/7hShsW9v/Stop.png" alt="stop" class="icon-cyrcle"></span>
-                        <span>1050 ₽</span>
+                        <span>35 <img src="https://i.postimg.cc/7hShsW9v/Stop.png" alt="stop" class="icon-cyrcle"></span>1050 ₽
+                        
                     </div>
-                    <button class="add-to-cart" onclick="addToCart('Добыча Охотника', 1050)">В инвентарь</button>
+                    <button class="add-to-cart" onclick="addToCart('Добыча Охотника', 1050, '35 см')">В инвентарь</button>
                 </div>
                 <div class="pizza-card">
                     <img src="https://media.dodostatic.net/image/r:292x292/0198bf439a007604880d0231be87cd3e.avif" alt="Ярость дракона" class="pizza-image">
                     <div class="pizza-name">Ярость дракона</div>
-                    <div class="pizza-ingredients">Острые чоризо, острый перец, соус, томаты, моцарелла, пряная</div>
+                    <div class="pizza-ingredients">Острые чоризо, острый перец, соус, томаты, моцарелла, говядина</div>
                     <div class="pizza-price">
-                        <span>35 <img src="https://i.postimg.cc/7hShsW9v/Stop.png" alt="stop" class="icon-cyrcle"></span>
-                        <span>1050 ₽</span>
+                        <span>35 <img src="https://i.postimg.cc/7hShsW9v/Stop.png" alt="stop" class="icon-cyrcle"></span>1050 ₽
+                        
                     </div>
-                    <button class="add-to-cart" onclick="addToCart('Ярость дракона', 1050)">В инвентарь</button>
+                    <button class="add-to-cart" onclick="addToCart('Ярость дракона', 1050, '35 см')">В инвентарь</button>
                 </div>
                 <div class="pizza-card">
                     <img src="https://media.dodostatic.net/image/r:292x292/0198bf530345746e98039478001d5108.avif" alt="Руна Вечного Лета" class="pizza-image">
                     <div class="pizza-name">Руна Вечного Лета</div>
                     <div class="pizza-ingredients">Цыпленок, ананасы, моцарелла, фирменный соус Альфредо</div>
                     <div class="pizza-price">
-                        <span>35 <img src="https://i.postimg.cc/7hShsW9v/Stop.png" alt="stop" class="icon-cyrcle"></span>
-                        <span>850 ₽</span>
+                        <span>35 <img src="https://i.postimg.cc/7hShsW9v/Stop.png" alt="stop" class="icon-cyrcle"></span>850 ₽
+                        
                     </div>
-                    <button class="add-to-cart" onclick="addToCart('Руна Вечного Лета', 850)">В инвентарь</button>
+                    <button class="add-to-cart" onclick="addToCart('Руна Вечного Лета', 850, '35 см')">В инвентарь</button>
                 </div>
             </div>
             <h3 class="section-title-mini"><b>Свиток Тайн Азии</b></h3>
@@ -395,29 +685,29 @@
                     <img src="https://mybox-menu.storage.yandexcloud.net/productAnnouncement/FDA6B737-46BD-4CFA-BC38-E8B6F625191D?AWSAccessKeyId=nBfHjt3yHLl_tqKfFNBy&Expires=2377582304&Signature=FXMTeaBkeiaaM%2BZKd85FrcQPlw4%3D" alt="Сердце моря" class="pizza-image">
                     <div class="pizza-name">Сердце моря</div>
                     <div class="pizza-ingredients">Лосось, огурец, сыр сливочный, рис, нори</div>
-                    <div class="card-roll-price"><span>8 шт</span> <span>800 ₽</span></div>
-                    <button class="add-to-cart" onclick="addToCart('Сердце моря', 800)">В инвентарь</button>
+                    <div class="card-roll-price"><span>8 шт</span> 800 ₽</div>
+                    <button class="add-to-cart" onclick="addToCart('Сердце моря', 800, '8 шт')">В инвентарь</button>
                 </div>
                 <div class="pizza-card">
                     <img src="https://mybox-menu.storage.yandexcloud.net/productAnnouncement/EDF0D3A2-7831-4B18-8F04-E8AD7F0B6ABA?AWSAccessKeyId=nBfHjt3yHLl_tqKfFNBy&Expires=2377582356&Signature=oPD%2BudskQHSOLY84DUIPbSS5kjU%3D" alt="Сенсей" class="pizza-image">
                     <div class="pizza-name">Сенсей</div>
                     <div class="pizza-ingredients">Нори, рис, сыр сливочный, угорь, огурец, масаго, креветки, соус, сыр</div>
-                    <div class="card-roll-price"><span>8 шт</span> <span>650 ₽</span></div>
-                    <button class="add-to-cart" onclick="addToCart('Сенсей', 650)">В инвентарь</button>
+                    <div class="card-roll-price"><span>8 шт</span> 650 ₽</div>
+                    <button class="add-to-cart" onclick="addToCart('Сенсей', 650, '8 шт')">В инвентарь</button>
                 </div>
                 <div class="pizza-card">
                     <img src="https://mybox-menu.storage.yandexcloud.net/productAnnouncement/70663469-8F94-47B4-9B51-BC4B3A7FE861?AWSAccessKeyId=nBfHjt3yHLl_tqKfFNBy&Expires=2393156120&Signature=q6Wp10iBv2V%2FOo%2FbXgjXgDGQDm0%3D" alt="Нежность долин" class="pizza-image">
                     <div class="pizza-name">Нежность долин</div>
-                    <div class="pizza-ingredients">Нори, рис, огурец, лосось, соус Сливочный, икра масаago</div>
-                    <div class="card-roll-price"><span>8 шт</span> <span>600 ₽</span></div>
-                    <button class="add-to-cart" onclick="addToCart('Нежность долин', 600)">В инвентарь</button>
+                    <div class="pizza-ingredients">Нори, рис, огурец, лосось, соус Сливочный, икра масагo</div>
+                    <div class="card-roll-price"><span>8 шт</span> 600 ₽</div>
+                    <button class="add-to-cart" onclick="addToCart('Нежность долин', 600, '8 шт')">В инвентарь</button>
                 </div>
                 <div class="pizza-card">
                     <img src="https://mybox-menu.storage.yandexcloud.net/productAnnouncement/58F23DB3-7619-441B-895F-F343ACEE2968?AWSAccessKeyId=nBfHjt3yHLl_tqKfFNBy&Expires=2379772454&Signature=39rhBGhuI4kEt6I43Y74YneMMfM%3D" alt="Жар восхода" class="pizza-image">
                     <div class="pizza-name">Жар восхода</div>
                     <div class="pizza-ingredients">Нори, рис, сыр сливочный, масаго, лосось, огурец, темпура</div>
-                    <div class="card-roll-price"><span>8 шт</span> <span>500 ₽</span></div>
-                    <button class="add-to-cart" onclick="addToCart('Жар восхода', 500)">В инвентарь</button>
+                    <div class="card-roll-price"><span>8 шт</span> 500 ₽</div>
+                    <button class="add-to-cart" onclick="addToCart('Жар восхода', 500, '8 шт')">В инвентарь</button>
                 </div>
             </div>
         </div>
@@ -451,8 +741,203 @@
     </div>
     <div class="container-correction">
         <img src="https://i.postimg.cc/2yTRSd83/money.png" alt="money" class="money-icon">
-        Дорогой путник, мы ценим наших клиентов, потому что не используем криптовалюту в качестве оплаты <br> <label> <input type="checkbox">  Нажми если не криптовалютчик.</label>
+        Дорогой путник, мы ценим наших клиентов, потому что не используем криптовалюту в качестве оплаты
         <img src="https://i.postimg.cc/2yTRSd83/money.png" alt="money" class="money-icon">
     </div>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <div class="cart-title">Корзина заказа</div>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        <div class="cart-content">
+            <div class="cart-section">
+                <div class="section-title-cart">Инвентарь</div>
+                <div id="cartItems">
+                </div>
+            </div>
+            
+            <div class="cart-section">
+                <div class="section-title-cart">Способ оплаты</div>
+                <div class="option-group">
+                    <div class="option-item">
+                        <input type="radio" name="payment" id="payment-card" class="option-input" checked>
+                        <label for="payment-card" class="option-label">
+                            <span class="custom-checkbox"></span>
+                            Картой
+                        </label>
+                    </div>
+                    
+                    <div class="option-item">
+                        <input type="radio" name="payment" id="payment-cash" class="option-input">
+                        <label for="payment-cash" class="option-label">
+                            <span class="custom-checkbox"></span>
+                            Наличными
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cart-section">
+                <div class="section-title-cart">Комментарий к заказу</div>
+                <input type="text" class="text-input" placeholder="Добавьте комментарий если нужно...">
+            </div>
+            
+            <div class="cart-section">
+                <div class="section-title-cart">Введите адрес доставки</div>
+                <input type="text" class="text-input" placeholder="Укажите улицу и дом...">
+            </div>
+            
+            <div class="order-summary">
+                <div class="section-title-cart">Стоимость заказа</div>
+                
+                <div class="summary-row">
+                    <span>Еда</span>
+                    <span id="subtotal">0 ₽</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span>Доставка</span>
+                    <span>200 ₽</span>
+                </div>
+                
+                <div class="artifact-section">
+                    
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="cryptoConfirm">
+                        Подтвердите, что вы не являетесь криптовалютчиком!
+                    </label>
+                </div>
+                
+                <div class="summary-row summary-total">
+                    <span>Итого</span>
+                    <span id="total">200 ₽</span>
+                </div>
+                
+                <button class="checkout-btn" id="checkoutBtn" disabled>Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        
+        const openCartBtn = document.getElementById('openCart');
+        const closeCartBtn = document.getElementById('closeCart');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const cartItemsContainer = document.getElementById('cartItems');
+        const subtotalElement = document.getElementById('subtotal');
+        const totalElement = document.getElementById('total');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const cryptoConfirm = document.getElementById('cryptoConfirm');
+        const cryptoCheckbox = document.getElementById('cryptoCheckbox');
+        
+        function addToCart(name, price, details) {
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    details: details,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            
+            openCart();
+            
+            alert(`Товар "${name}" добавлен в корзину!`);
+        }
+        
+        function updateCart() {
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<div class="empty-cart">Ваша корзина пуста</div>';
+                subtotalElement.textContent = '0 ₽';
+                totalElement.textContent = '200 ₽';
+                return;
+            }
+            
+            let subtotal = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="item-info">
+                        <div class="item-name">${item.name}</div>
+                        <div class="item-details">${item.details}</div>
+                    </div>
+                    <div class="item-price">
+                        <div class="current-price">${item.price} ₽</div>
+                    </div>
+                `;
+                
+                cartItemsContainer.appendChild(cartItem);
+            });
+            
+            subtotalElement.textContent = `${subtotal} ₽`;
+            totalElement.textContent = `${subtotal + 200} ₽`;
+        }
+        
+        function openCart() {
+            cartSidebar.classList.add('active');
+            cartOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeCart() {
+            cartSidebar.classList.remove('active');
+            cartOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function updateCheckoutButton() {
+            if (cryptoConfirm.checked) {
+                checkoutBtn.disabled = false;
+            } else {
+                checkoutBtn.disabled = true;
+            }
+        }
+        
+        openCartBtn.addEventListener('click', openCart);
+        closeCartBtn.addEventListener('click', closeCart);
+        cartOverlay.addEventListener('click', closeCart);
+        
+        cryptoConfirm.addEventListener('change', updateCheckoutButton);
+        cryptoCheckbox.addEventListener('change', function() {
+            cryptoConfirm.checked = this.checked;
+            updateCheckoutButton();
+        });
+        
+        checkoutBtn.addEventListener('click', function() {
+            if (cart.length === 0) {
+                alert('Ваша корзина пуста!');
+                return;
+            }
+            
+            if (!cryptoConfirm.checked) {
+                alert('Пожалуйста, подтвердите, что вы не являетесь криптовалютой!');
+                return;
+            }
+            
+            alert('Заказ успешно оформлен! Спасибо за покупку.');
+            cart = [];
+            updateCart();
+            closeCart();
+        });
+        
+        updateCart();
+    </script>
 </body>
 </html>
