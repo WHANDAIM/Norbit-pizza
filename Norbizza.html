@@ -71,7 +71,7 @@
         
         
         header {
-            background: linear-gradient(135deg, #0E0788);
+            background-color: #0E0788;
             color: white;
             padding: 15px 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -104,17 +104,18 @@
             flex-wrap: wrap;
             list-style: none;
             justify-content: center;
+            align-items: center;
         }
         
         nav ul li {
-            margin: 5px 10px;
+            margin: 5px 15px;
         }
         
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            font-size: 16px;
+            font-size: 22px;
             transition: color 0.5s;
             display: flex;
             align-items: center;
@@ -308,8 +309,8 @@
         }
         
         .cart-header {
-            background: linear-gradient(135deg, #0C0675, #790686);
-            color: white;
+            background-color: #ffffff;
+            color: #0C0675;
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -324,7 +325,7 @@
         .close-cart {
             background: none;
             border: none;
-            color: white;
+            color: #0C0675;
             font-size: 24px;
             cursor: pointer;
             width: 30px;
@@ -616,7 +617,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo-container">
-                    <img src="https://i.postimg.cc/Z5PH8vcg/9e27cc54-6257-4c35-aa31-2735d5e6c849.png" alt="Norbizza Logo" style="height: 40px; width: 40px;">
+                    <img src="https://i.postimg.cc/Z5PH8vcg/9e27cc54-6257-4c35-aa31-2735d5e6c849.png" alt="Norbizza Logo" style="height: 70px; width: 70px;">
                     <span class="logo">Norbizza</span>
                 </div>
                 <nav>
@@ -625,7 +626,7 @@
                         <li><a href="">Артефакты</a></li>
                         <li><a href="">Фракции</a></li>
                         <li><a href="">Клан</a></li>
-                        <li><a href="">Вступить в клан</a></li>
+                        <li><a href="">Вступить в гильдию</a></li>
                         <li><button class="button-backpack" id="openCart"></button></li>
                     </ul>
                 </nav>
@@ -641,7 +642,7 @@
             <div class="pizza-grid">
                 <div class="pizza-card">
                     <img src="https://media.dodostatic.net/image/r:292x292/0198bf315122735a8b45cf8539df53f8.avif" alt="Клинок Пепперо" class="pizza-image">
-                    <div class="pizza-name">Клинок Пепперо</div>
+                    <div class="pizza-name">Клинок Пеппероо</div>
                     <div class="pizza-ingredients">Пепперони, моцарелла, фирменный томатный соус</div>
                     <div class="pizza-price">
                         <span>35 <img src="https://i.postimg.cc/7hShsW9v/Stop.png" alt="stop" class="icon-cyrcle"></span>850 ₽
@@ -748,12 +749,12 @@
     <div class="cart-overlay" id="cartOverlay"></div>
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <div class="cart-title">Корзина заказа</div>
+            <div class="cart-title">Инвентарь</div>
             <button class="close-cart" id="closeCart">×</button>
         </div>
         <div class="cart-content">
             <div class="cart-section">
-                <div class="section-title-cart">Инвентарь</div>
+                <div class="section-title-cart"></div>
                 <div id="cartItems">
                 </div>
             </div>
